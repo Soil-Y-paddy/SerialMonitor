@@ -100,3 +100,24 @@ class SerialProc:
         """ 接続前状態 :TRUE"""
         
         return ( self.__stat == SerialProc.Stat.Ready ) 
+
+
+if __name__ == "__main__":
+    onRecieve = False
+    
+    def RecieveCallback( data, timestamp ):
+        global onRecieve
+        # 引数： data : 受信データ(文字列)
+        #       timestamp :  受信時間(HH:MM:SS.mm)
+        print("{}{}".format( timestamp, data ) )
+        onRecieve = True
+    
+    comProc = SerialProc( RecieveCallback )
+    comProc.Connect("COM3", 115200) # COMポートと、通信速度を指定
+    print("{} : Start ".format( datetime.now().strftime("%H:%M:%S.%f")[:12] ) )
+    comProc.Transmit("Hwllow") # データ送信
+    while(1):
+        if onRecieve :
+            comProc.Close() # 受信したら閉じる
+            break
+        time.sleep(1)

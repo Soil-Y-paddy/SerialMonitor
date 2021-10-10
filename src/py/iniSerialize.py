@@ -112,13 +112,13 @@ if __name__ == "__main__":
     
     
     c = IniSerializer.Load("test.ini", ClsA )
-  #  print(vars(c))
+    print(vars(c))
     
     c.TestSection.TestKey1=100
-    c.TestSection.TestKey3 = None
+    c.TestSection.TestKey3 = "world"
     setattr( c.TestSection, "Find", "you")
     
-    print(type(c.TestSection.__dict__ ))
+    print(vars(c))
     
     
     c.Save( "test.ini" )
