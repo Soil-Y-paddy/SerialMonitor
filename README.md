@@ -1,0 +1,2 @@
+# SerialMonitor
+pythonでシリアル通信を利用するGUIを作成するデモ
