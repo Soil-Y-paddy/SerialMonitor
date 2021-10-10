@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>シリアル通信ツール</title>
+		<script type="text/javascript">
+
+		</script>
+
+		<script type="text/javascript" src="/eel.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/monitorApp.js"></script>
+		<link rel="icon" href="favicon.ico" type="image/x-icon" >
+		<link rel="stylesheet" href="css/main.css" >
+		
+	</head>
+	<body>
+	<div id="head">
+
+		ポート:<select id="portName" size=1 style="width:200px" ></select> 
+		Baud:<select id="baud" onChange="sendChangeMsg(this)" ></select>
+		<input type="button" value="接続" onClick='Connect()' id="conBtn"><br>
+		<input type="text" style="width:90%" id="sendText"  autocomplete="on" list="sendHistory" ><input type="button" value="送信" onClick="SendMsg()">
+		<datalist id="sendHistory"></datalist>
+
+	</div>
+	<div id='main-Panel'>
+		<pre id="rcvPanel"></pre>
+		<div><br></div>
+	</div>
+
+
+	<div id="footer">
+		<table>
+			<tr>
+				<td style="width:100px;font-size:small" id="Status">
+				</td>
+				<td id="info">
+				</td>
+				<td id="dushBoard">
+				<input type="checkbox" id="autosc" checked value="1" onChange="sendChangeMsg(this)"> <label for="autosc">自動スクロール</label>
+				<input type="checkbox" id="timestamp" checked value="1" onChange="sendChangeMsg(this)" > <label for="timestamp">タイムスタンプを表示</label>
+				<select id="lfcode" onChange="sendChangeMsg(this)">
+				<option value="0">改行なし</option>
+				<option value="1">LFのみ</option>
+				<option value="2">CRのみ</option>
+				<option value="3">CR+LF</option>
+				</select>
+				<input type="button" onClick="ClearLog()" value="出力をクリア">
+				</td>
+				<td id="debug"></td>
+			</tr>
+		</table>
+	</div>
+
+	</body>
+</html>

@@ -1,0 +1,115 @@
+body
+{
+	height:100%;
+	margin:0px;
+	padding:0px;
+	
+	display: flex;
+	flex-flow: column;
+	min-height: 100vh;
+}
+
+#head{
+	background:steelblue;
+	padding:10px;
+	width:100%;
+	position:fixed;
+	z-index:50;
+}
+
+#main-Panel
+{
+	margin:50px 0 50px 0 ;
+	position:absolute;
+	padding:10px;
+	top 0;
+	bottom 0;
+	overflow-y : auto;
+	z-index:1;
+	min-height: calc(100vh - 100px);
+	flex: 1;
+	
+}
+
+#rcvPanel
+{
+	tab-size:4;
+}
+
+#footer
+{
+	background:steelblue;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index:10;
+	width: 100%;
+	height: 30px;
+}
+
+#SliderBox
+{
+	background-color:white;
+	z-index:50;
+}
+
+.oddLine {
+	background-color:Honeydew;
+}
+
+.evenLine {
+	background-color:FloralWhite;
+}
+
+.Focus {
+	background-color:lightyellow;
+}
+
+input[type="text"]:read-only, textarea:read-only {
+  background-color: #EEE;
+  border: 1px solid black;
+}
+/*
+.panel
+{
+	height:auto;
+	overflow:scroll;
+}
+*/
+
+.ConnectedBtn
+{
+	background-color: #FF0;
+}
+
+.InputH
+{
+	width:6em;
+}
+
+.InputI
+{
+	width:6em;
+}
+
+.InputQ
+{
+	width:8em;
+}
+.InputC
+{
+	width:10em;
+}
+.InputS
+{
+	width:16em;
+}
+.InputN
+{
+	width:16em;
+}
+
+.InputX
+{
+	width:6em;
+}
