@@ -102,7 +102,8 @@ class IniSection :
         
 
 if __name__ == "__main__":
-
+	
+	# サンプルコード
     class ClsA(IniSerializer):
         
         def __init__(self):
