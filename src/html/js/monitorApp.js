@@ -100,6 +100,11 @@ function PrintRcv( data, timestamp )
 	}
 }
 
+eel.expose(showClock)
+function showClock(data)
+{
+	$("#pic1").attr("src","data:image/png;base64,"+data)
+}
 
 // 状態を表示する
 eel.expose(SetStatus)
