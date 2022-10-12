@@ -49,6 +49,7 @@ class SerialProc:
             self.__ser = ser
             self.__start = True
             self.__thread = threading.Thread(target = self.mainLoop )
+            self.__thread.setDaemon(True)
             self.__thread.start()
 
         
